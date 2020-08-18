@@ -21,6 +21,7 @@ class matchGame:
                 print("'"+self.words[self.count]+"' ->",self.words)
                 self.count = self.count + 1
             else: #Not Match
+                print("'"+item[2:]+"' -> game over")
                 self.X()
         else:
             self.words.append(item[2:])

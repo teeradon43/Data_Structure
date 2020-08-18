@@ -5,6 +5,6 @@ These files and quiz came from GRADER and some interesting example of Data Struc
 * [ ] Learn
 * [x] Sleep
 ```python
+for i is alive
 print('I am going to sleep')
-for ever
 ```

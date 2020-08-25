@@ -22,4 +22,3 @@ class Queue:
 
     def isFull(self): # if queue has limited size
         pass
-    

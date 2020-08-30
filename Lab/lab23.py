@@ -1,3 +1,7 @@
+"""
+Chapter : 5 - item : 3 - Infix to Postfix
+ให้รับ Input เป็น  Infix  และแสดงผลลัพธ์ออกมาเป็น  Postfix
+"""
 class Stack:
     def __init__(self,list = None):
         if list == None:

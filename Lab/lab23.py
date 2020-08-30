@@ -34,9 +34,11 @@ for i in inF:
                 else:
                     s.pop()
                     break
-    elif i in '*/^':
+    elif i == '^':
+        s.push(i)
+    elif i in '*/':
         if not s.isEmpty():
-            if s.peek() in '^':
+            if s.peek() in '*/^':
                 postF += s.pop()
         s.push(i)
     elif i in '+-':

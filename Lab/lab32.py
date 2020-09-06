@@ -38,7 +38,7 @@ for i in txt:
         sQ.enqueue(j[1])
         pass #เก็บ value ไว้ว่าเป็น ES แล้วเอาไปต่อ ES ข้างหน้า
     else:
-        if nQ.size() > 0:
+        if nQ.size() > 0 or sQ.size() > 0:
             if sQ.size() > 0:
                 print(sQ.dequeue())
             else:

@@ -1,3 +1,104 @@
+"""
+Chapter : 6 - item : 2 - Doubly Linked List(append,insert,remove)
+ให้เขียนคลาสของ Doubly Linked List ซึ่งมีเมท็อดดังนี้
+
+1. def __init__(self): สำหรับสร้าง linked list
+2. def __str__(self): return string แสดง ค่าใน linked list
+3. def str_reverse(self): return string แสดง ค่าใน linked list จากหลังมาหน้า
+4. def isEmpty(self): return list นั้นว่างหรือไม่
+5. def append(self, data): add node ที่มี data เป็น parameter ข้างท้าย linked list
+6. def insert(self, index, data): insert data ใน index ที่กำหนด
+7. def remove(self, data): remove & return node ที่มี data
+
+ - การแทรกในที่นี้ จะเป็นการนำข้อมูลใหม่ที่ต้องการมาใส่แทนที่ตำแหน่งของข้อมูลเดิมและย้ายข้อมูลเดิมไปต่อหลังข้อมูลใหม่ 
+
+คำแนะนำเพิ่มเติม เพื่อความง่ายในการเขียนโค้ดและไม่ต้องเขียนspecial caseเยอะๆ ให้ลองใช้ Dummy Node ดูนะครับ
+(หากสงสัยการใช้งาน Dummy Node สอบถามพี่ๆTA หรือ https://youtu.be/XgUIjTQ1HjA )
+
+โดยรูปแบบ Input มีดังนี้
+1. append       ->  A
+2. add_before -> Ab
+3. insert          ->   I
+4. remove       ->  R
+
+*******ให้ใช้ class Node ในการทำ Linked List ห้ามใช้ list*********
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.previous = None
+"""
+
+"""
+TEST CASE
+Testcase student: #1/6
+Enter Input : A 3,A 4,Ab 0,I 1:2
+linked list : 3
+reverse : 3
+linked list : 3->4
+reverse : 4->3
+linked list : 0->3->4
+reverse : 4->3->0
+index = 1 and data = 2
+linked list : 0->2->3->4
+reverse : 4->3->2->0
+
+Testcase student: #2/6
+Enter Input : I -1:0,I 10:10,I 0:0
+Data cannot be added
+linked list : 
+reverse : 
+Data cannot be added
+linked list : 
+reverse : 
+index = 0 and data = 0
+linked list : 0
+reverse : 0
+
+Testcase student: #3/6
+Enter Input : R 0,A 1,A 1,A 2,R 1
+Not Found!
+linked list : 
+reverse : 
+linked list : 1
+reverse : 1
+linked list : 1->1
+reverse : 1->1
+linked list : 1->1->2
+reverse : 2->1->1
+removed : 1 from index : 0
+linked list : 1->2
+reverse : 2->1
+
+Testcase student: #6/6
+Enter Input : I 1:1,I 0:0,I 0:1,I 0:2,I 3:-1,I -1:-1,I 10:5,I 2:0
+Data cannot be added
+linked list : 
+reverse : 
+index = 0 and data = 0
+linked list : 0
+reverse : 0
+index = 0 and data = 1
+linked list : 1->0
+reverse : 0->1
+index = 0 and data = 2
+linked list : 2->1->0
+reverse : 0->1->2
+index = 3 and data = -1
+linked list : 2->1->0->-1
+reverse : -1->0->1->2
+Data cannot be added
+linked list : 2->1->0->-1
+reverse : -1->0->1->2
+Data cannot be added
+linked list : 2->1->0->-1
+reverse : -1->0->1->2
+index = 2 and data = 0
+linked list : 2->1->0->0->-1
+reverse : -1->0->0->1->2
+
+
+"""
 class Node:
     def __init__(self, data):
         self.data = data
@@ -136,4 +237,3 @@ for i in inp:
         L.remove(i[2:])
     print('linked list :',L)
     print('reverse :',L.str_reverse())
-#input = A 3,A 4,Ab 0,I 1:2

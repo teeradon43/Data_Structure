@@ -40,21 +40,25 @@ Merge Result : 1 1 1 1 2 2 2 5 5 5 6 7 8 10
 """
 class node:
     def __init__(self,data,next = None ):
-        ### Code Here ###
+        self.data = data
+        self.next = next
+
     def __str__(self):
-        ### Code Here ###
+        pass
 
 def createList(l=[]):
-    ### Code Here ###
+    l = list(l)
+    return l
 
 def printList(H):
-    ### Code Here ###
+    return 0
 
 def mergeOrderesList(p,q):
-    ### Code Here ###
+    return 0
 
 #################### FIX comand ####################   
 # input only a number save in L1,L2
+L1, L2 = input('Enter 2 Lists : ').split(' ')
 LL1 = createList(L1)
 LL2 = createList(L2)
 print('LL1 : ',end='')

@@ -18,8 +18,8 @@ def solveFormular(List,index,count):
     s, b = solveFormular(List, index + 1, count // 2)
 
     if count % 2 == 1:
-        s *= int(List[index].split()[0]);
-        b += int(List[index].split()[1]);
+        s *= int(List[index].split()[0])
+        b += int(List[index].split()[1])
     
     return s, b
 

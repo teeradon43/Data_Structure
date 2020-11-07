@@ -32,3 +32,46 @@ RLLL*
 
 
 """
+
+class Node:
+
+    def __init__(self,data,left=None,right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+
+class BST:
+    
+    def __init__(self):
+        self.root = None
+
+    def insert(self,data):
+        p = Node(data)
+        res = ""
+        if self.root == None:
+            self.root = p
+        else:
+            r = self.root
+            while True:
+                if int(p.data) < int(r.data):
+                    res+='L'
+                    if r.left == None:
+                        r.left = p
+                        break
+                    r = r.left
+                else:
+                    res+='R'
+                    if r.right == None:
+                        r.right = p
+                        break
+                    r = r.right
+        print(res+'*')
+        return self.root
+
+if __name__ == '__main__':
+    T = BST()
+    inp = input('Enter Input : ').split()
+    for i in inp:
+        T.insert(i)
+    
+

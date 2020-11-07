@@ -1,7 +1,5 @@
 """
-Chapter : 5 - item : 1 - Parentheses ver.2
-ให้น้องๆเขียนโปรแกรมรับ input เป็นวงเล็บ โดยมีรูปแบบดังนี้  วงเล็บเปิด :  (  กับ  [    วงเล็บปิด :  )  กับ  ]   
-โดยให้หาว่าถ้าหากนำวงเล็บมาจับคู่กัน จะครบทุกคู่หรือไม่  โดยให้แสดงผลลัพธ์ที่บอกว่าคู่วงเล็บที่ Input เข้ามานั้น Match กันหรือไม่
+Matching Parenthesis by using STACK (Python)
 """
 class Stack:
     def __init__(self,list = None):
@@ -32,9 +30,9 @@ def Match(op,cl):
 
 stack = Stack()
 s = input('Enter Input : ')
-match = True
+match = True #Set default as there are no error
 i = 0
-while i in range(len(s)) and match == True :
+while i in range(len(s)) and match == True : #Checking parenthesis while there are no error
     for word in s:
         if word in '([':
             stack.push(word)
@@ -46,6 +44,6 @@ while i in range(len(s)) and match == True :
             else:
                 match = False
     i += 1
-if stack.size() > 0:
+if stack.size() > 0: #Recheck if there are still open-paren left
     match = False
 print('Parentheses : Matched ! ! !' if match==True else 'Parentheses : Unmatched ! ! !')
